@@ -1,0 +1,378 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  @font-face {
+    font-family: "Dash";
+    src: url("/fonts/DASH/DASH-Early.ttf");
+  }
+  @font-face {
+    font-family: "Dugas";
+    src: url("/fonts/Dugas Pro/DugasPro-RegularNormal.ttf");
+  }
+  @font-face {
+    font-family: "Schabo";
+    src: url("/fonts/SCHABO_Cond/SCHABO-Condensed.woff");
+  }
+  @font-face {
+    font-family: "groplet";
+    src: url("/fonts/groplet/Gropled-bold.otf");
+  }
+  @font-face {
+    font-family: "gktype";
+    src: url("/fonts/Gktype/Gktype.otf");
+  }
+  @font-face {
+    font-family: "termina";
+    src: url("/fonts/Termina/TerminaTest-Regular.otf");
+  }
+  @font-face {
+    font-family: "termina";
+    src: url("/fonts/Termina/TerminaTest-Medium.otf");
+    font-weight: 500;
+  }
+  @font-face {
+    font-family: "termina";
+    src: url("/fonts/Termina/TerminaTest-Bold.otf");
+    font-weight: bold;
+  }
+  @font-face {
+    font-family: "whiteNt";
+    src: url("/fonts/white_nt/White NT Bold.otf");
+  }
+  .stats {
+    @apply bg-[#091F1C] text-white p-4 flex-1 rounded-md border-[#004337] border-2;
+  }
+  .stats-container {
+    @apply bg-[#091F1C] p-5 rounded-lg border-[#004337] border;
+  }
+  .countdown {
+    @apply p-8 text-5xl text-center text-white rounded-lg lg:min-w-[150px] bg-[#013F34];
+  }
+  .countdown-label {
+    @apply text-center text-white uppercase text-sm pt-4;
+  }
+  .admin-button {
+    @apply bg-[#091F1C] p-2 flex-1 rounded-md border-[#004337] border-2 hover:bg-emerald-500/50;
+  }
+
+  .grid-container {
+    background: radial-gradient(at 100% 60%, #2f315e, transparent 40%),
+      radial-gradient(at -20% 60%, #0b0a20, transparent 80%),
+      radial-gradient(at 50% 140%, #0b0a20, transparent 60%),
+      radial-gradient(at 75% 100%, #0b0a20, transparent 70%),
+      radial-gradient(at 45% 45%, #0b0a20, transparent 80%),
+      radial-gradient(at 50% 20%, #725cd6, transparent 50%),
+      radial-gradient(at 30% 80%, #7379c4, transparent 90%),
+      radial-gradient(at 20% 0%, #0b0a20, transparent 100%);
+    background-color: #0b0a20;
+  }
+  .card,
+  .card-qr {
+    background: rgba(255, 255, 255, 0.06);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    overflow: hidden;
+  }
+  .card::before,
+  .card-qr::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 16px;
+    padding: 0.05rem;
+    background: linear-gradient(
+      180deg,
+      transparent 20%,
+      rgba(255, 255, 255, 0.15) 100%
+    );
+    -webkit-mask: linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    z-index: -1;
+  }
+
+  .card-1 {
+    /* background: radial-gradient(at -20% 60%, #0b0a20, transparent 80%),
+      radial-gradient(at 50% 140%, #0b0a20, transparent 60%),
+      radial-gradient(at 75% 100%, #0b0a20, transparent 70%),
+      radial-gradient(at 45% 45%, #0b0a20, transparent 80%),
+      radial-gradient(at 30% 80%, #7379c4, transparent 90%),
+      radial-gradient(at 20% 0%, #0b0a20, transparent 100%); */
+
+    background: radial-gradient(at 0% 120%, #ffffff 10%, transparent 55%),
+      radial-gradient(at 0% 0%, #a38bff 10%, transparent 90%),
+      radial-gradient(at 100% 20%, #daff88 30%, transparent 90%),
+      radial-gradient(at 100% 0%, #daff88 30%, transparent 60%),
+      radial-gradient(at 0% 100%, #ffffff 40%, transparent 90%);
+    background-color: white;
+  }
+  input[type="number"] {
+    font-family: "termina";
+    font-size: 1rem;
+    line-height: 20px;
+    color: black;
+  }
+  input[type="number"]::-webkit-inner-spin-button,
+  input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+  }
+  .title {
+    font-family: "groplet";
+    font-size: 7rem;
+    line-height: 100px;
+    color: black;
+  }
+  .sub-title {
+    font-family: "termina";
+    font-size: 1rem;
+    line-height: 20px;
+    color: black;
+  }
+  .ticket-total {
+    font-family: "termina";
+    font-size: 1rem;
+    line-height: 20px;
+    color: black;
+  }
+  .seperator {
+    border-right: 1px dashed black;
+  }
+  .countdown-value {
+    font-family: "Schabo";
+    font-size: 12rem;
+    line-height: 160px;
+    color: white;
+  }
+  .card-title {
+    @apply text-white text-base text-center uppercase;
+    font-family: "termina";
+    font-weight: 500;
+    letter-spacing: 1px;
+    /* background: linear-gradient(
+      180deg,
+      transparent 20%,
+      rgba(255, 255, 255, 0.15) 100%
+    ); */
+    padding: 16px 0px 0px 0px;
+    width: 100%;
+  }
+  .countdown-message {
+    @apply mt-auto uppercase -ml-0.5 mb-2 italic;
+    width: 20px;
+    font-family: "termina";
+    font-size: 0.5rem;
+    color: white;
+    letter-spacing: 1px;
+  }
+  .card-2 {
+    background: radial-gradient(at -20% 60%, #1c1a38, transparent 80%),
+      radial-gradient(at 50% 140%, #1c1a38, transparent 60%),
+      radial-gradient(at 75% 100%, #1c1a38, transparent 70%),
+      radial-gradient(at 45% 45%, #1c1a38, transparent 80%),
+      radial-gradient(at -20% -20%, #a38bff, transparent 90%),
+      radial-gradient(at 20% 0%, #1c1a38, transparent 100%);
+  }
+  .menu-item {
+    font-family: "termina";
+    font-size: 0.9rem;
+    color: white;
+    letter-spacing: 1px;
+    text-align: right;
+  }
+  .menu-item-balance {
+    font-family: "termina";
+    font-size: 0.6rem;
+    color: white;
+    letter-spacing: 1px;
+    text-align: right;
+  }
+  .card-6 {
+    background: radial-gradient(at -20% 60%, #1c1a38, transparent 80%),
+      radial-gradient(at 50% 140%, #1c1a38, transparent 60%),
+      radial-gradient(at 75% 100%, #1c1a38, transparent 70%),
+      radial-gradient(at 45% 45%, #1c1a38, transparent 80%),
+      radial-gradient(at -10% 90%, #7379c4, transparent 90%),
+      radial-gradient(at 20% 0%, #1c1a38, transparent 100%);
+  }
+  .card-7 {
+    background: radial-gradient(at -20% 60%, #1c1a38, transparent 80%),
+      radial-gradient(at 50% 140%, #1c1a38, transparent 60%),
+      radial-gradient(at 20% 60%, #7379c4, transparent 50%),
+      radial-gradient(at 75% 100%, #1c1a38, transparent 70%),
+      radial-gradient(at 45% 45%, #1c1a38, transparent 80%),
+      radial-gradient(at 20% 0%, #1c1a38, transparent 100%);
+  }
+  .marquee {
+    @apply p-3;
+    font-family: "termina";
+    font-size: 0.8rem;
+    color: white;
+  }
+  .card-8 {
+    background: radial-gradient(at -20% 60%, #1c1a38, transparent 80%),
+      radial-gradient(at 50% 140%, #1c1a38, transparent 60%),
+      radial-gradient(at 120% 120%, #7379c4, transparent 90%),
+      radial-gradient(at 75% 100%, #1c1a38, transparent 70%),
+      radial-gradient(at 45% 45%, #1c1a38, transparent 80%),
+      radial-gradient(at 20% 0%, #1c1a38, transparent 100%);
+  }
+  .card-9 {
+    background: radial-gradient(at -20% 60%, #1c1a38, transparent 80%),
+      radial-gradient(at 50% 140%, #1c1a38, transparent 60%),
+      radial-gradient(at 100% 0%, #7379c4, transparent 70%),
+      radial-gradient(at 75% 100%, #1c1a38, transparent 70%),
+      radial-gradient(at 45% 45%, #1c1a38, transparent 80%),
+      radial-gradient(at 20% 0%, #1c1a38, transparent 100%);
+  }
+  .disclaimer {
+    @apply text-white/60 flex items-center py-4 px-10 ml-28 text-justify h-full;
+    font-family: "termina";
+    font-size: 0.65rem;
+  }
+  .disclaimer-icon {
+    @apply text-white/10 h-64;
+    position: absolute;
+    left: -80px;
+    z-index: -1;
+    transform: rotate(35deg);
+  }
+  .grid-line {
+    display: inline-block;
+    background-image: linear-gradient(
+        0deg,
+        transparent 24%,
+        rgba(255, 255, 255, 0.03) 25%,
+        rgba(255, 255, 255, 0.03) 26%,
+        transparent 27%,
+        transparent 74%,
+        rgba(255, 255, 255, 0.03) 75%,
+        rgba(255, 255, 255, 0.03) 76%,
+        transparent 77%,
+        transparent
+      ),
+      linear-gradient(
+        90deg,
+        transparent 24%,
+        rgba(255, 255, 255, 0.03) 25%,
+        rgba(255, 255, 255, 0.03) 26%,
+        transparent 27%,
+        transparent 74%,
+        rgba(255, 255, 255, 0.03) 75%,
+        rgba(255, 255, 255, 0.03) 76%,
+        transparent 77%,
+        transparent
+      );
+    width: 100%;
+    height: 100%;
+    background-size: 100px 100px;
+    display: grid;
+    place-items: center;
+  }
+  .card-qr {
+    @apply bg-white;
+    overflow: unset;
+  }
+  .card-qr .cup-icon {
+    @apply w-28 max-w-none -mt-20;
+    filter: drop-shadow(-5px 5px 5px rgba(0, 0, 0, 0.5));
+    transform: rotate(-25deg);
+  }
+  .qr-title {
+    @apply flex w-20 items-center justify-center flex-1 uppercase mb-10;
+    font-family: "whiteNt";
+    font-size: 1.6rem;
+  }
+  .qr-vertical-container {
+    @apply w-20 h-full bg-[#daff88] flex flex-col;
+    border-radius: 16px 0px 0px 16px;
+  }
+
+  .badge {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 200px;
+    animation: identifier 20s linear infinite;
+  }
+
+  .badge__emoji {
+    display: block;
+    margin: 0;
+    animation: identifier 20s linear infinite;
+    animation-direction: reverse;
+    transition: all 0.3s;
+  }
+
+  .badge__char {
+    @apply text-white text-base;
+    font-family: "whiteNt";
+
+    display: block;
+    position: absolute;
+    top: 0;
+    left: calc(50% - 6px / 2);
+    height: calc(200px / 2);
+    width: 6px;
+    background-repeat: round;
+    text-align: center;
+    text-transform: uppercase;
+    line-height: 1rem;
+
+    transform-origin: bottom center;
+    transform: rotate(var(--char-rotate));
+  }
+
+  @keyframes identifier {
+    0% {
+      -webkit-transform: rotate(0deg);
+      transform: rotate(0deg);
+    }
+
+    to {
+      -webkit-transform: rotate(1turn);
+      transform: rotate(1turn);
+    }
+  }
+  .loading-container {
+    @apply h-screen flex flex-col items-end justify-end;
+    background: radial-gradient(at 100% 60%, #2f315e, transparent 40%),
+      radial-gradient(at -20% 60%, #0b0a20, transparent 80%),
+      radial-gradient(at 50% 140%, #0b0a20, transparent 60%),
+      radial-gradient(at 75% 100%, #0b0a20, transparent 70%),
+      radial-gradient(at 45% 45%, #0b0a20, transparent 80%),
+      radial-gradient(at 50% 20%, #725cd6, transparent 50%),
+      radial-gradient(at 30% 80%, #7379c4, transparent 90%),
+      radial-gradient(at 20% 0%, #0b0a20, transparent 100%);
+    background-color: #0b0a20;
+  }
+  .loader {
+    @apply flex items-center justify-center gap-5 text-white m-10;
+    font-family: "whiteNt";
+    font-size: 1.8rem;
+  }
+  .dot-1 {
+    animation: hide 0.4s ease 0s infinite alternate;
+  }
+  .dot-2 {
+    animation: hide 0.4s ease 0.2s infinite alternate;
+  }
+  .dot-3 {
+    animation: hide 0.4s ease 0.4s infinite alternate;
+  }
+  @keyframes hide {
+    from {
+      opacity: 1;
+    }
+    to {
+      opacity: 0.25;
+    }
+  }
+}
