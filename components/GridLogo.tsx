@@ -5,7 +5,7 @@ function GridLogo() {
     test();
   }, []);
   function test() {
-    const element = document.querySelectorAll(".badge__char");
+    const element = document.querySelectorAll<HTMLElement>(".badge__char");
     const step = 360 / element.length;
 
     element.forEach((elem, i) => {
