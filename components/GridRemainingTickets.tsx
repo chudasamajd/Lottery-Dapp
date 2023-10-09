@@ -17,7 +17,7 @@ function GridRemainingTickets() {
         <ArrowUpRightIcon className="text-white h-11 m-3" />
       </div>
       <div className="flex space-x-4 flex-1 justify-between px-4">
-        <div className="countdown-value">{remainingTickets?.toNumber()}</div>
+        <div className="countdown-value">{remainingTickets?.toNumber() ? remainingTickets?.toNumber() : "00"}</div>
       </div>
     </div>
   );
