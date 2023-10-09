@@ -50,7 +50,7 @@ function GridCountdownTimer() {
           <div className="flex space-x-6 flex-1 items-center">
             <div className="flex-1">
               <div className="flex">
-                <div className="countdown-value">{minutes}</div>
+                <div className="countdown-value">{minutes ? minutes : "00"}</div>
                 <div className="countdown-message">
                   <div className="-rotate-90 text-white/70 mb-0.5">minutes</div>
                 </div>
@@ -59,7 +59,7 @@ function GridCountdownTimer() {
 
             <div className="flex-1">
               <div className="flex">
-                <div className="countdown-value">{seconds}</div>
+                <div className="countdown-value">{seconds ? seconds : "00"}</div>
                 <div className="countdown-message">
                   <div className="-rotate-90 text-white/70 mb-0.5">seconds</div>
                 </div>
