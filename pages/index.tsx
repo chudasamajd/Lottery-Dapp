@@ -111,7 +111,7 @@ const Home: NextPage = () => {
     }
   };
 
-  if (isLoading) return <Loading />;
+  // if (isLoading) return <Loading />;
   return (
     <>
       <Head>
